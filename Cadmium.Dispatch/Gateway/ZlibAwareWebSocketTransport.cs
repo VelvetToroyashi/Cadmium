@@ -19,7 +19,7 @@ namespace Cadmium.Dispatch.Gateway;
 public class ZlibAwareWebSocketTransport : IPayloadTransportService
 {
     private const int WebSocketSizeHint = 4096; // The gateway doesn't accept > 4kib.
-    private const ushort ZLibMagicBytes = 0x78DA;
+    private const ushort ZLibMagicBytes = 0xDA70;
     private const WebSocketCloseStatus ReconnectingCloseStatus = (WebSocketCloseStatus)1012; // Service restart.
     
     private readonly MemoryStream _dataStream;
@@ -150,7 +150,7 @@ public class ZlibAwareWebSocketTransport : IPayloadTransportService
         {
             ReadOnlySpan<byte> resultingBytes;
 
-            if (BinaryPrimitives.ReadUInt16BigEndian(bufferWriter.WrittenSpan[..1]) is not ZLibMagicBytes)
+            if (BinaryPrimitives.ReadUInt16LittleEndian(bufferWriter.WrittenSpan[..2]) is not ZLibMagicBytes)
             {
                 // This payload isn't compressed, pass it along:
                 resultingBytes = bufferWriter.WrittenSpan;
