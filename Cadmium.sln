@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadmium", "Cadmium\Cadmium.csproj", "{F5CF3E9C-243E-4D15-A1BA-7BDC04C9D620}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadmium.Receiver", "Cadmium.Receiver\Cadmium.Receiver.csproj", "{66D50D04-18B5-4A36-A133-32DC660515AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadmium.Dispatch", "Cadmium.Dispatch\Cadmium.Dispatch.csproj", "{4BC8E4C6-A596-4F38-973C-65E5DC1FF062}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5CF3E9C-243E-4D15-A1BA-7BDC04C9D620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5CF3E9C-243E-4D15-A1BA-7BDC04C9D620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5CF3E9C-243E-4D15-A1BA-7BDC04C9D620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5CF3E9C-243E-4D15-A1BA-7BDC04C9D620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66D50D04-18B5-4A36-A133-32DC660515AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D50D04-18B5-4A36-A133-32DC660515AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D50D04-18B5-4A36-A133-32DC660515AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D50D04-18B5-4A36-A133-32DC660515AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BC8E4C6-A596-4F38-973C-65E5DC1FF062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BC8E4C6-A596-4F38-973C-65E5DC1FF062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BC8E4C6-A596-4F38-973C-65E5DC1FF062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BC8E4C6-A596-4F38-973C-65E5DC1FF062}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
