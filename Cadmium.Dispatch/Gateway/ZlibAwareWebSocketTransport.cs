@@ -101,9 +101,14 @@ public class ZlibAwareWebSocketTransport : IPayloadTransportService
         {
             return new InvalidOperationError("The websocket is not open or initialized.");
         }
-        
-        var bytes = JsonSerializer.SerializeToUtf8Bytes(payload, _serializerOptions);
 
+        // PERF: Allocate our own writer to save bytes (160 vs 920 in testing)
+        using var bufferWriter = new ArrayPoolBufferWriter<byte>(WebSocketSizeHint);
+        await using var writer = new Utf8JsonWriter(bufferWriter);
+        
+        JsonSerializer.Serialize(writer, payload, _serializerOptions);
+        var bytes = bufferWriter.DangerousGetArray().Array!;
+        
         if (bytes.Length > WebSocketSizeHint)
         {
             return new InvalidOperationError($"The payload is too large (Max: {WebSocketSizeHint} bytes. Got: {bytes.Length} bytes).");
